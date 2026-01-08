@@ -69,7 +69,7 @@ const ProductsSection = () => {
                               width={300} 
                               height={300} 
                               className="aspect-square object-contain"/>
-                            <Button className="w-10 h-10 p-2! absolute right-3 top-3 "><FiPlus size={24}/></Button>
+                            <Button size="small" className="w-10 h-10 p-2! absolute right-3 top-3 "><FiPlus size={24}/></Button>
                         </div>
                         <h3 className="font-medium  text-lg mb-1.5 mt-4">{product.name}</h3>
                         <div className="flex justify-between mb-8">

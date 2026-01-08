@@ -25,8 +25,8 @@ const HeroSection = () => {
                Limitless motion.
             </p>
             <div className="flex gap-5 mt-14">
-               <Button>Explore More <FiFastForward/></Button>
-               <Button variant="ghost">Watch Video {" "}
+               <Button size="normal">Explore More <FiFastForward/></Button>
+               <Button size="normal" variant="ghost">Watch Video {" "}
                   <Image src="/images/icon-play-video.svg" alt="icon playvideo" width={29} height={29}/>
                </Button> 
             </div>
