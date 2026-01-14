@@ -2,7 +2,7 @@ type TButtonProps = {
     children: React.ReactNode;
     className?: string;
     variant?: "primary" | "dark" | "ghost";
-    size: "normal" | "small";
+    size?: "normal" | "small";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({children, className, variant = "primary", size = "normal", ...props}: TButtonProps) => {
@@ -20,10 +20,10 @@ const Button = ({children, className, variant = "primary", size = "normal", ...p
     }
 
     return (
-        <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}>
+        <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`} {...props}>
             {children}
         </button>
-    )
-}
+    );
+};
 
 export default Button;
