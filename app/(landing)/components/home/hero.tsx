@@ -33,10 +33,10 @@ const HeroSection = () => {
           </div>
           <Image 
             src="/images/img-hero.png" 
-            width={700} 
-            height={950} 
+            width={660} 
+            height={850} 
             alt="image sporton hero"
-            className="absolute -right-5 top-1/2 -translate-y-1/2"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12"
           />
         </div>
         <Image 
