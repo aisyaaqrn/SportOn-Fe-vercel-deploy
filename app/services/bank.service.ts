@@ -1,6 +1,43 @@
-import { fetchAPI } from "../lib/api";
-import { Bank} from "../types";
+import { fetchAPI, getAuthHeader } from "../lib/api";
+import { Bank } from "../types";
 
 export const getAllBanks = async (): Promise<Bank[]> => {
-   return  await fetchAPI<Bank[]>("/banks");
+  const res = fetchAPI<Bank[]>("/banks");
+
+   return res;
+};
+
+export const createBank = async (data: Partial<Bank>): Promise<Bank> => {
+  return await fetchAPI<Bank>("/banks", {
+    method: "POST",
+    headers: {
+      ...getAuthHeader(),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+export const updateBank = async (
+  id: string,
+  data: Partial<Bank>
+): Promise<Bank> => {
+  return await fetchAPI<Bank>(`/banks/${id}`, {
+    method: "PUT",
+    headers: {
+      ...getAuthHeader(),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+export const deleteBank = async (id: string): Promise<void> => {
+  return await fetchAPI<void>(`/banks/${id}`, {
+    method: "DELETE",
+    headers: {
+      ...getAuthHeader(),
+      "Content-Type": "application/json",
+    },
+  });
 };
