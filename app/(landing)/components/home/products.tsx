@@ -42,7 +42,7 @@ const ProductsSection = ({products}: TProductsProps) => {
                         </div>
                         <h3 className="font-medium  text-lg mb-1.5 mt-4">{product.name}</h3>
                         <div className="flex justify-between mb-8">
-                            <div className="text-gray-500">{product.category.name}</div>
+                            <div className="text-gray-500">{product.category?.name ?? "No Category"}</div>
                             <div className="font-medium text-primary">
                                 {Intl.NumberFormat("id-ID", {
                                 style: "currency",
