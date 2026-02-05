@@ -25,7 +25,7 @@ export interface Product {
   name: string;
   description: string;
   imageUrl: string;
-  category: Category;
+  category: Category | null;
   stock: number;
   price: number;
   createdAt: string;
@@ -46,7 +46,7 @@ export interface Transaction {
   paymentProof: string;
   status: "pending" | "paid" | "rejected";
   purchasedItems: {
-    productId: Product | null;
+    productId: Product;
     qty: number;
   }[];
   totalPayment: string;
