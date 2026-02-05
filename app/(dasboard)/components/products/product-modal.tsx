@@ -118,7 +118,7 @@ const ProductModal = ({
         name: product.name,
         description: product.description,
         price: product.price,
-        categoryId: product.category._id,
+        categoryId: product.category?._id ?? "",
         stock: product.stock,
       });
       setImagePreview(product.imageUrl ? getImageUrl(product.imageUrl) : null);
